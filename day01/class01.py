@@ -3,7 +3,7 @@
 
 ## Strings ------------------------------------------------
 
-s1 = "hi my name is erin". ## double quotes
+s1 = "hi my name is erin" ## double quotes
 
 s2 = 'how are you?' ## single quotes
 
