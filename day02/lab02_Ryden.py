@@ -11,7 +11,7 @@ class Clock(object):
 
     ## Print the time
     def __str__(self):
-    	return "%d:%02d" % (self.hour, self.minutes)
+    	return "%02d:%02d" % (self.hour, self.minutes)
     
     ## Add time
     ## Don't return anything
