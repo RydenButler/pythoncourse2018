@@ -10,19 +10,22 @@ with open('test_readfile.txt') as f:
   the_whole_thing = f.read()
   print the_whole_thing
 
+
 ## Read line by line
 with open('test_readfile.txt') as f:
   lines_list = f.readlines()
   for l in lines_list:
     print l
 
-## More efficiently we can loop over the file object (i.e. we don't need the variable lines)
+## More efficiently we can loop over the file object
+## (i.e. we don't need the variable lines)
 with open('test_readfile.txt') as f:   
   for l in f:
     print l
     
     
-## We can also manually open and close files, now we need to handle exceptions and close
+## We can also manually open and close files,
+## now we need to handle exceptions and close
 ## I never do this
 f =  open('test_readfile.txt')
 print f.read()
@@ -31,7 +34,8 @@ f.close()
 
 ## Writing text files ------------------------------------------------
 
-## Writing files is easy, open command takes r, w, a, plus some others
+## Writing files is easy,
+## open command takes r, w, a, plus some others
 with open('test_writefile.txt', 'w') as f:
   ## wipes the file clean and opens it
   f.write("Hi guys.")
@@ -48,14 +52,14 @@ with open('test_writefile.txt', 'a') as f:
 import csv
 
 ## Open a file stream and create a CSV writer object
-with open('test_writecsv.csv', 'wb') as f:
+with open('test_writecsv.txt', 'wb') as f:
   my_writer = csv.writer(f)
   for i in range(1, 100):
     my_writer.writerow([i, i-1])
 
 
 ## Now read in the csv
-with open('test_writecsv.csv', 'rb') as f:
+with open('test_writecsv.txt', 'rb') as f:
   my_reader = csv.reader(f)
   mydat = []
   for row in my_reader:
@@ -64,7 +68,7 @@ print mydat
 
     
 ## Adding column names
-with open('test_csvfields.csv', 'wb') as f:
+with open('test_csvfields.txt', 'wb') as f:
   my_writer = csv.DictWriter(f, fieldnames = ("A", "B"))
   my_writer.writeheader()
   for i in range(1, 100):
